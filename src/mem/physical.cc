@@ -59,13 +59,11 @@
 /**
  * On Linux, MAP_NORESERVE allow us to simulate a very large memory
  * without committing to actually providing the swap space on the
- * host. On OSX the MAP_NORESERVE flag does not exist, so simply make
- * it 0.
+ * host. On some systems MAP_NORESERVE flag does not exist, so
+ * simply set it 0.
  */
-#if defined(__APPLE__)
 #ifndef MAP_NORESERVE
 #define MAP_NORESERVE 0
-#endif
 #endif
 
 using namespace std;
